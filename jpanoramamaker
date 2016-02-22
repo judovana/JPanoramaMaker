@@ -1,0 +1,23 @@
+#!/bin/bash
+. /usr/share/java-utils/java-functions
+
+MAIN_CLASS=panoramajoinner.PanoramaMaker
+
+set_classpath "swing-layout"
+set_classpath "jpanoramamaker-5"
+
+mem=`free -mt | tail -n1 | sed 's/  */ /g' | cut -d ' ' -f 2`;
+let "mem=$mem/3*2"
+r=`let "mem=$mem/3*2" 2>&1`; 
+echo $mem
+echo "$r" | r=`sed 's/  */ /g'`
+echo $r
+
+if [ "$r" = "" ] ; then 
+  FLAGS=$FLAGS" -Xmx$mem""M"
+  echo "executing with -Xmx$mem""M"
+  run "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
+else
+  echo "executing without -Xmx!"
+  run "$1" "$2" "$3" "$4" "$5" "$6" "$7" "$8" "$9"
+fi

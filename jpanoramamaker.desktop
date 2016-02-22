@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Name=JPanoramaMaker
+GenericName=Panorama-Maker
+Comment=Tool which stitch photos without bottle effect in linear curved space
+Exec=jpanoramamaker
+Icon=jpanoramamaker
+Terminal=false
+Type=Application
+Categories=Graphics;
+

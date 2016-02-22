@@ -1,4 +1,10 @@
 *.class
+build
+dist
+image
+lib
+panoTools
+nbproject/private
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
